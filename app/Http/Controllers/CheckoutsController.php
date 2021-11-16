@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CheckoutsResource;
 use App\Models\Checkout;
+use DateTime;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -14,7 +16,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        //
+        return CheckoutsResource::collection(Checkout::all());
     }
 
     /**
@@ -35,7 +37,13 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $checkout = Checkout::create([
+            'user_id' => (string) $request->user_id, // from request
+            'book_id' => (string) $request->book_id, // from request
+            'checked_out' => new DateTime(), // new timestamp
+            'checked_in' => new DateTime()// null
+
+        ]);
     }
 
     /**
@@ -46,7 +54,7 @@ class CheckoutController extends Controller
      */
     public function show(Checkout $checkout)
     {
-        //
+        return new CheckoutsResource($checkout);
     }
 
     /**
@@ -69,7 +77,14 @@ class CheckoutController extends Controller
      */
     public function update(Request $request, Checkout $checkout)
     {
-        //
+        $checkout->update([
+            'user_id'=>$request->input('user_id'),
+            'book_id'=>$request->input('book_id'),
+            'checked_out'=>$request->input('checked_out'),
+            'checked_in'=>$request->input('checked_in')
+        ]);
+
+        return new CheckoutsResource($checkout);
     }
 
     /**
