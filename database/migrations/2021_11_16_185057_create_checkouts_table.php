@@ -15,10 +15,11 @@ class CreateCheckoutsTable extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('book_id');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('book_id')->constrained();
+            $table->timestamp("checked_out");
+            $table->timestamp("checked_in")->nullable();
             $table->timestamps();
-            $table->timestamp('');
         });
     }
 

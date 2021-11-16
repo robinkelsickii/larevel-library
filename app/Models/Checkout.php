@@ -9,5 +9,5 @@ class Checkout extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["user_id", "book_id", "checked_out", "checked_id"];
+    protected $fillable = ['user_id', 'book_id', 'checked_out', 'checked_in'];
 }
