@@ -1,9 +1,12 @@
-<?php
+  <?php
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorsController;
+use App\Http\Controllers\BooksController;
 
-/*
+
+    /*
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
@@ -14,6 +17,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+    Route::middleware('auth:api')->prefix('v1')->group(function () {
+        Route::get('/user', function (Request $request) {
+            return $request->user();
+        });
+        Route::apiResource('/authors', AuthorsController::class);
+        Route::apiResource('/books', BooksController::class);
+    });
+
+    //book belongs to an author
+    //user that creates books
+    // create authors first
+
+    //author/{author}
+    //For one specific author
