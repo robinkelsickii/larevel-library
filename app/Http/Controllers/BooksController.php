@@ -44,7 +44,10 @@ class BooksController extends Controller
             'description' => $this->faker->sentence,
             'publication_year' => (string) $this->faker->year,
             'price' => $this->faker->randomNumber($nbDigits = 2),
-            'in_stock' => $this->faker->boolean($chanceOfGettingTrue = 50)
+            'in_stock' => $this->faker->boolean($chanceOfGettingTrue = 50),
+            'checked_out' => $this->faker->date,
+            'checked_in' => date(null)
+
         ]);
 
         return new BooksResource($book);
@@ -87,7 +90,9 @@ class BooksController extends Controller
             'description' => $request->input('description'),
             'publication_year' => $request->input('publication_year'),
             'price' => $request->input('price'),
-            'in_stock' => $request->input('in_stock')
+            'in_stock' => $request->input('in_stock'),
+            'checked_out' => $this->faker->date,
+            'checked_in' => date(null)
         ]);
 
         return new BooksResource($book);

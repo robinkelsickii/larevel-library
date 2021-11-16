@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class BookAuthorSeeder extends Seeder
+class RoleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class BookAuthorSeeder extends Seeder
      */
     public function run()
     {
-        //
+       \App\Models\Role::factory(10)->create();
     }
 }

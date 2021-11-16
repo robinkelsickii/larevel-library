@@ -23,7 +23,7 @@ use App\Http\Controllers\BooksController;
         });
         Route::apiResource('/authors', AuthorsController::class);
         Route::apiResource('/books', BooksController::class);
-        Route::apiResource('/checkouts', CheckoutsController::class);
+        Route::apiResource('/roles', BooksController::class);
     });
 
     //book belongs to an author

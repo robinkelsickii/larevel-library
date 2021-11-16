@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BookAuthor;
+use App\Models\Role;
 use Illuminate\Http\Request;
+use App\Http\Resources\RolesResource;
 
-class BookAuthorController extends Controller
+
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,7 @@ class BookAuthorController extends Controller
      */
     public function index()
     {
-        //
+        return RolesResource::collection(Role::all());
     }
 
     /**
@@ -35,27 +37,31 @@ class BookAuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $role = Role::create([
+         'label' => $this->faker->jobTitle
+        ]);
+
+        return new RolesResource($role);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\BookAuthor  $bookAuthor
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(BookAuthor $bookAuthor)
+    public function show(Role $role)
     {
-        //
+        return new RolesResource($role);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BookAuthor  $bookAuthor
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(BookAuthor $bookAuthor)
+    public function edit(Role $role)
     {
         //
     }
@@ -64,22 +70,27 @@ class BookAuthorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BookAuthor  $bookAuthor
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BookAuthor $bookAuthor)
+    public function update(Request $request, Role $role)
     {
-        //
+         $role = Role::create([
+         'label' => $this->faker->jobTitle
+        ]);
+
+        return new RolesResource($role);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BookAuthor  $bookAuthor
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BookAuthor $bookAuthor)
+    public function destroy(Role $role)
     {
-        //
+         $role->delete();
+        return response(null, 204);
     }
 }

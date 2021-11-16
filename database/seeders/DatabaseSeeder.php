@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Author;
+use App\Models\User;
+use App\Models\Book;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +19,5 @@ class DatabaseSeeder extends Seeder
         $this->call(AuthorSeeder::class);
         $this->call(BookSeeder::class);
         $this->call(UserSeeder::class);
-
     }
 }

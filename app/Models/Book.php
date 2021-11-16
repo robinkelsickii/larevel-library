@@ -9,17 +9,6 @@ class Book extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'ISBN', 'description', 'publication_year', 'price', 'in_stock'];
+    protected $fillable = ['title', 'ISBN', 'description', 'publication_year', 'price', 'in_stock', 'checked_out', 'check_in'];
 
-    // public function author()
-    // {
-    //     return $this->hasManyThrough(
-    //         '\App\Models\Author',
-    //         '\App\Models\BookAuthor',
-    //         'book_id',
-    //         'id',
-    //         'id',
-    //         'author_id'
-    //     );
-    // }
 }

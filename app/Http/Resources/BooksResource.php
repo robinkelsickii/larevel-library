@@ -24,6 +24,8 @@ class BooksResource extends JsonResource
                 'publication_year' => $this->publication_year,
                 'price' => $this->price,
                 'in_stock' => $this->in_stock,
+                'checked_out' => $this->checked_out,
+                'checked_in' => $this->checked_in,
                 'created_at' => $this->created_at,
                 'updated_at' => $this->updated_at
             ]

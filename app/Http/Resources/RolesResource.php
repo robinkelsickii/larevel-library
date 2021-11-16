@@ -2,10 +2,9 @@
 
 namespace App\Http\Resources;
 
-use Attribute;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CheckoutsResource extends JsonResource
+class RolesResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,12 +15,8 @@ class CheckoutsResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'attributes' => [
-                'user_id' => (string) $this->user_id,
-                'book_id' => (string) $this->book_id,
-                'checked_out' => $this->checked_out,
-                'checked_in' => $this->checked_in,
-            ]
+            'id' => (string)$this->id,
+            'label' => $this->label
         ];
     }
 }

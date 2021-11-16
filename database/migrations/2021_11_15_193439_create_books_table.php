@@ -21,6 +21,8 @@ class CreateBooksTable extends Migration
             $table->string('publication_year');
             $table->float('price');
             $table->boolean('in_stock');
+            $table->string('checked_out');
+            $table->string('checked_in');
             $table->timestamps();
         });
     }

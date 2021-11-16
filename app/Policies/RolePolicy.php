@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\BookAuthor;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class BookAuthorPolicy
+class RolePolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class BookAuthorPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\BookAuthor  $bookAuthor
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, BookAuthor $bookAuthor)
+    public function view(User $user, Role $role)
     {
         //
     }
@@ -48,10 +48,10 @@ class BookAuthorPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\BookAuthor  $bookAuthor
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, BookAuthor $bookAuthor)
+    public function update(User $user, Role $role)
     {
         //
     }
@@ -60,10 +60,10 @@ class BookAuthorPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\BookAuthor  $bookAuthor
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, BookAuthor $bookAuthor)
+    public function delete(User $user, Role $role)
     {
         //
     }
@@ -72,10 +72,10 @@ class BookAuthorPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\BookAuthor  $bookAuthor
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, BookAuthor $bookAuthor)
+    public function restore(User $user, Role $role)
     {
         //
     }
@@ -84,10 +84,10 @@ class BookAuthorPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\BookAuthor  $bookAuthor
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, BookAuthor $bookAuthor)
+    public function forceDelete(User $user, Role $role)
     {
         //
     }
