@@ -11,4 +11,16 @@ class Book extends Model
 
     protected $fillable = ['title', 'ISBN', 'description', 'publication_year', 'price', 'in_stock', 'checked_out', 'check_in'];
 
+    public function author()
+    {
+        return $this->hasManyThrough(
+            '\App\Models\Author',
+            '\App\Models\BookAuthors',
+            'book_id',
+            'id',
+            'id',
+            'author_id'
+        );
+    }
+
 }
