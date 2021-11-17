@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Str;
+use \App\Http\Resources\UsersResource;
 
 class UsersController extends Controller
 {
@@ -27,10 +28,23 @@ class UsersController extends Controller
             'remember_token' => Str::random(10),
 
         ]);
+
+        return new UsersResource($user);
     }
 
     public function show(User $user)
     {
         return $user->role;
+    }
+
+     public function index()
+    {
+        return UsersResource::collection(User::all());
+    }
+
+     public function destroy(User $user)
+    {
+         $user->delete();
+        return response(null, 204);
     }
 }

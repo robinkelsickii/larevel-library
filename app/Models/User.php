@@ -47,7 +47,7 @@ class User extends Authenticatable
     {
         $this->hasManyThrough(
             '\App\Models\Role',
-            '\App\Models\UserRole',
+            '\App\Models\UserRoles',
             'user_id',
             'id',
             'id',
