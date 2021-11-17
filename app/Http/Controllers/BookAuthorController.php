@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\BookAuthor;
-use App\Models\BookAuthors;
 use Illuminate\Http\Request;
 
 class BookAuthorController extends Controller
@@ -45,7 +44,7 @@ class BookAuthorController extends Controller
      * @param  \App\Models\BookAuthor  $bookAuthor
      * @return \Illuminate\Http\Response
      */
-    public function show(BookAuthors $bookAuthor)
+    public function show(BookAuthor $bookAuthor)
     {
         //
     }
@@ -56,7 +55,7 @@ class BookAuthorController extends Controller
      * @param  \App\Models\BookAuthor  $bookAuthor
      * @return \Illuminate\Http\Response
      */
-    public function edit(BookAuthors $bookAuthor)
+    public function edit(BookAuthor $bookAuthor)
     {
         //
     }
@@ -68,7 +67,7 @@ class BookAuthorController extends Controller
      * @param  \App\Models\BookAuthor  $bookAuthor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BookAuthors $bookAuthor)
+    public function update(Request $request, BookAuthor $bookAuthor)
     {
         //
     }
@@ -79,7 +78,7 @@ class BookAuthorController extends Controller
      * @param  \App\Models\BookAuthor  $bookAuthor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BookAuthors $bookAuthor)
+    public function destroy(BookAuthor $bookAuthor)
     {
         //
     }

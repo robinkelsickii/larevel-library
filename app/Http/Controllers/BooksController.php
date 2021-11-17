@@ -45,9 +45,6 @@ class BooksController extends Controller
             'publication_year' => (string) $this->faker->year,
             'price' => $this->faker->randomNumber($nbDigits = 2),
             'in_stock' => $this->faker->boolean($chanceOfGettingTrue = 50),
-            'checked_out' => $this->faker->date,
-            'checked_in' => date(null)
-
         ]);
 
         return new BooksResource($book);

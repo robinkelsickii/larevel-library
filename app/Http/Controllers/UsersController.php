@@ -34,7 +34,7 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
-        return $user->role;
+        return $user;
     }
 
      public function index()
