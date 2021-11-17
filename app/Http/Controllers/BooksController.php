@@ -37,7 +37,7 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        $faker = \Faker\Factory::create(1);
+
         $book = Book::create([
            'title' => (string) $this->faker->sentence($nbWords = 5),
             'ISBN' => $this->faker->isbn13,

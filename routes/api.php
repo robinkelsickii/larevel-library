@@ -1,10 +1,11 @@
-  <?php
+<?php
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\AuthorsController;
 use \App\Http\Controllers\BooksController;
 use \App\Http\Controllers\RolesController;
+use \App\Http\Controllers\UsersController;
 
 
     /*
@@ -23,6 +24,7 @@ use \App\Http\Controllers\RolesController;
             return $request->user();
         });
         Route::apiResource('/authors', AuthorsController::class);
+        Route::apiResource('/users', UsersController::class);
         Route::apiResource('/books', BooksController::class);
         Route::apiResource('/roles', RolesController::class);
     });

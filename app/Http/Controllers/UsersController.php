@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Str;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
     public function all (){
         $users = User::all();
@@ -18,7 +18,7 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $faker = \Faker\Factory::create(1);
+
         $user = User::create([
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
@@ -27,5 +27,10 @@ class UserController extends Controller
             'remember_token' => Str::random(10),
 
         ]);
+    }
+
+    public function show(User $user)
+    {
+        return $user->role;
     }
 }

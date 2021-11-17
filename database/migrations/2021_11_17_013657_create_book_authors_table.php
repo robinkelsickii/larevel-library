@@ -17,8 +17,6 @@ class CreateBookAuthorsTable extends Migration
         Schema::create('book_authors', function (Blueprint $table) {
             $table->foreignId('author_id')->constrained('authors')->onDelete('cascade');
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
-
-
         });
     }
 
